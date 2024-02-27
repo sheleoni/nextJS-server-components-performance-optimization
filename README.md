@@ -7,24 +7,24 @@ Visualising whether refactoring a button containing client logic (i.e. `<button 
 
 Two branches are created for comparison: 
 
-(a) [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
+(a) Client component renders the entire button: [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
 
-(b) [feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)
+(b) Render `<button onCLick={postData}>` on a client component and its children in a server component: [feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)
+
+Both branches render a button that contains two `<Images>` and some text. Upon click, it will POST data to a dummy API.
+
+![CleanShot 2024-02-28 at 01 55 05](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/57150e2d-e4e2-4c97-a7f1-4be0a357cca3)
 
 
- | (a) Only Client Component ([/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main))| (b) Client & Server Component ([feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)) |
-|-----------------------|---------------------------|
-|using only client component to render the button and its children  ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114)|
-
-
-# Visualising and comparing builds
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-Navigate to the branch of your choice: (a) `/main` for (b) `feat/server_and_client_component`. (a) uses only the client component, while (b) uses a mix of client and server components and run 
+Navigate to each branch and run
 
 ```bash
 npm run build
 ```
-to see the file sizes. 
+to compare results.
 
+# Results
+
+| (a) Only Client Component ([/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main))| (b) Client & Server Component ([feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)) |
+|-----------------------|---------------------------|
+|using only client component to render the button and its children  ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114)|
