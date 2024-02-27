@@ -5,16 +5,11 @@ export async function POST() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            title: 'FDSFDS',
+            title: 'Carrot Cake',
             /* other product data */
         })
     })
-
     const data = await res.json();
-
-    console.log(data, 'RESPONSE FROM SERVER')
-
+    console.log(data, 'Response from API')
     return NextResponse.json({ data })
-
-    // return new Response("YO")
 }
