@@ -9,7 +9,7 @@ Two branches are created for comparison:
 
 (a) Client component renders the entire button: [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
 
-(b) Render `<button onCLick={postData}>` on a client component and its children in a server component: [feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)
+(b) Render `<button onCLick={postData}>` on a client component and its children in a server component: [feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component), [code difference from (a)](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1/files)
 
 Both branches render a button that contains two `<Images>` and some text. Upon click, it will POST data to a dummy API.
 
