@@ -34,7 +34,7 @@ We are testing two different buttons:
 
 ### (ii) When there is no `<Images />` tag rendered within the `<button>` tags
 
-Alternatively, if we simply render a button without image. There is almost zero difference on First Load JS.
+Alternatively, if we simply render a button without image. There is no perciptible difference on First Load JS.
  
 | (a) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (b) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
 |-----------------------|---------------------------|
