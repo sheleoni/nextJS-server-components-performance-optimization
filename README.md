@@ -33,7 +33,8 @@ to compare results.
 
 Alternatively, if we 
 - branch name
-- `npm run build` resuts for both 
-| (a) Only Client Component ([/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main))| (b) Client & Server Component ([feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)) |
+- `npm run build` resuts for both
+- 
+| (a) Only Client Component ( // tbc: branch link ) | (b) Client & Server Component (// tbc: branch link) |
 |-----------------------|---------------------------|
 |using only client component to render the button and its children  // tbc | using client component to render the button tag, and server component to render its children //tbc |
