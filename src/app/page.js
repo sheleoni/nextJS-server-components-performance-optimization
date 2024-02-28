@@ -9,6 +9,13 @@ export default function Home() {
   return (
     <main className={styles.main}>
         <ButtonContainer>
+            <Image src={UnicornImage} alt={"Image of a unicorn typing on a laptop."} width={150} height={150}/>
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300}/>
+            </p>
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300} />
+            </p>
             <p>
                 Submit (POST data)
             </p>
