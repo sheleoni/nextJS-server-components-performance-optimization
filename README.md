@@ -22,7 +22,7 @@ to compare results.
 
 # Results
 
-We are testing two different buttons: 
+We are testing two scenarios: 
 | Case (i) <br /> Two `<Image />`s are rendered within the `<button>` tags | Case (ii) <br /> No `<Images />` tag rendered within the `<button>` tags |
 | ------ | ----- |
 | <img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/57150e2d-e4e2-4c97-a7f1-4be0a357cca3" height="400"> | <img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/591f7d21-a360-480c-bfd2-15f57e0e345a" width="400"> |
