@@ -37,4 +37,4 @@ Alternatively, if we
 - 
 | (a) Only Client Component ( // tbc: branch link ) | (b) Client & Server Component (// tbc: branch link) |
 |-----------------------|---------------------------|
-|using only client component to render the button and its children  // tbc | using client component to render the button tag, and server component to render its children //tbc |
+|using only client component to render the button and its children ![CleanShot 2024-02-29 at 02 25 50@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/c9c0ef6a-8af8-4f43-93b6-9c8638f333f9) | using client component to render the button tag, and server component to render its children //tbc |
