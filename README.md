@@ -25,7 +25,7 @@ to compare results.
 # Results
 
 ### (i) When two `<Image />`s are rendered within the `<button>` tags
-| (a) Only Client Component ([/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main))| (b) Client & Server Component ([feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component)) |
+| (a) Only Client Component ([/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main))| (b) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1)) |
 |-----------------------|---------------------------|
 |using only client component to render the button and its children  ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114)|
 
@@ -35,6 +35,6 @@ Alternatively, if we
 - branch name
 - `npm run build` resuts for both
 - 
-| (a) Only Client Component ( // tbc: branch link ) | (b) Client & Server Component (// tbc: branch link) |
+| (a) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (b) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
 |-----------------------|---------------------------|
-|using only client component to render the button and its children ![CleanShot 2024-02-29 at 02 25 50@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/c9c0ef6a-8af8-4f43-93b6-9c8638f333f9) | using client component to render the button tag, and server component to render its children //tbc |
+|using only client component to render the button and its children ![CleanShot 2024-02-29 at 02 25 50@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/c9c0ef6a-8af8-4f43-93b6-9c8638f333f9) | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-29 at 02 28 08@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/942b6d2d-b645-4ba4-b8ee-a392f38866d2) |
