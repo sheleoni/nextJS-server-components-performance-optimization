@@ -8,14 +8,172 @@ Visualising whether refactoring a button containing client logic (i.e. `<button 
 Four branches are created for comparison: 
 
 (a) Client component renders the entire button WITH the images: [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
+<details>
+  <summary>Code
+</summary>
+  
+```jsx
+// /page.js
+'use client'
+import styles from "./page.module.css";
+import UnicornImage from "./Uni-code_Unicorn_.png";
+import UnicornInTheSunImage from "./Unicorn_In_The_Sun.png";
+import Image from "next/image";
+const postSomeData = async () => {
+    const res = await fetch('/api/sendData/', {method: 'POST'});
+    window.alert("Data posted!")
+}
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <button onClick={postSomeData}>
+            <Image src={UnicornImage} alt={"Image of a unicorn typing on a laptop."} width={150} height={150} />
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300} />
+            </p>
+            <p>
+                Submit (POST data)
+            </p>
+        </button>
+    </main>
+  );
+}
+
+```
+</details>
+
 
 (b) Render `<button onCLick={postData}>` on a client component and its children in a server component WITH the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
+<details>
+ <summary>
+  Code
+ </summary>
+ 
+ ```jsx
+ // page.js (server component)
+ import styles from "./page.module.css";
+import UnicornImage from "./Uni-code_Unicorn_.png";
+import UnicornInTheSunImage from "./Unicorn_In_The_Sun.png";
+import Image from "next/image";
+import {ButtonContainer} from "@/app/components/ButtonContainer";
 
-Both branches render a button that contains two `<Image />`s and some text. Upon click, it will POST data to a dummy API.
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <ButtonContainer>
+            <Image src={UnicornImage} alt={"Image of a unicorn typing on a laptop."} width={150} height={150}/>
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300}/>
+            </p>
+            <p>
+                Submit (POST data)
+            </p>
+        </ButtonContainer>
+    </main>
+  );
+} 
+ ```
+
+```jsx
+// ButtonContainer.jsx (Client component)
+'use client'
+
+export function ButtonContainer ({ children }) {
+
+    const postSomeData = async () => {
+        const res = await fetch('/api/sendData/', {method: 'POST'});
+        window.alert("Data posted!")
+    }
+
+    return (
+        <button onClick={postSomeData}>
+            {children}
+        </button>
+    )
+
+}
+```
+</details>
 
 (c) Client component renders the entire button WITHOUT the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2))
 
+<details>
+ <summary>
+  Code
+ </summary>
+
+```jsx
+// /page.js (client component)
+'use client'
+import styles from "./page.module.css";
+const postSomeData = async () => {
+    const res = await fetch('/api/sendData/', {method: 'POST'});
+    window.alert("Data posted!")
+}
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <button onClick={postSomeData}>
+            <p>
+                Submit (POST data)
+            </p>
+        </button>
+    </main>
+  );
+}
+```
+ 
+</details>
+
 (d) Render `<button onCLick={postData}>` on a client component and its children in a server component WITHOUT the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3))
+
+<details>
+ <summary>
+  Code
+ </summary>
+
+```jsx
+// page.js (server component)
+import styles from "./page.module.css";
+import {ButtonContainer} from "@/app/components/ButtonContainer";
+
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <ButtonContainer>
+            <p>
+                Submit (POST data)
+            </p>
+        </ButtonContainer>
+    </main>
+  );
+}
+```
+
+```jsx
+// ButtonContainer.jsx (client component)
+'use client'
+
+export function ButtonContainer ({ children }) {
+
+    const postSomeData = async () => {
+        const res = await fetch('/api/sendData/', {method: 'POST'});
+        window.alert("Data posted!")
+    }
+
+    return (
+        <button onClick={postSomeData}>
+            {children}
+        </button>
+    )
+
+}
+```
+</details>
 
 <p>Navigate to each branch and run</p>
 
