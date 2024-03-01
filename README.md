@@ -55,4 +55,4 @@ Is there a way to handle the POST logic on solely with a server component then? 
 
 ## Credits
 
-This stemmed from a discussion from with Josh and Bonnie on [Joy Of React's](https://www.joyofreact.com/) discord channel. Thank you for helping me understand this topic in depth ✨
+This stemmed from a discussion from with Josh and Bonnie on [Joy Of React's](https://www.joyofreact.com/) discord channel. Thank you [Josh](https://twitter.com/JoshWComeau) and [Bonnie](https://bonnie.dev/) for helping me understand this topic in more depth. ✨
