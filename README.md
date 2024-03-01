@@ -42,6 +42,7 @@ Alternatively, if we simply render a button without image. There is no perciptib
  
 | (c) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (d) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
 |------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+|<img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/08ce9d73-3248-4f40-a479-1f8321928bbd"> | <img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/aa1bee1a-3df2-4259-be6d-bda85aa2e6c3"> |
 
 # Handling POST logic on the server
 
