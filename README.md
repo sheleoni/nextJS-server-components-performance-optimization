@@ -48,11 +48,11 @@ Alternatively, if we simply render a button without the `<Image />`s, the First 
 
 Unless the `<button>` contains a lot of markup, rendering the entire button in a client component doesn't produce much difference in performance.
 
-# Alternative: Handling POST logic on the server
+## Alternative: Handling POST logic on the server
 
 Is there a way to handle the POST logic on solely with a server component then? It seems like [server actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) may offer a way to POST data on server components.  However, if we are POSTing to a third-party API, this may not apply - we probably still have to POST data from the client component, in which case this repository may serve as a reference in deciding whether rendering button content in a server component is necessary.  
 
 
-# Credits
+## Credits
 
 This stemmed from a discussion from with Josh and Bonnie on [Joy Of React's](https://www.joyofreact.com/) discord channel. Thank you for helping me understand this topic in depth ✨
