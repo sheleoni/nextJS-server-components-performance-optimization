@@ -1,4 +1,4 @@
-
+<sup>Read the [Japanese](README_JP.md) version here. 日本語版は[こちら](README_JP.md)です。</sup>
 # Aim of this repository
 
 Visualising whether refactoring a button containing client logic (i.e. `<button onClick={submitData}>Submit</button>`) into server componet and client component (indicated by the `use client` directive) provides significant performance gains.
