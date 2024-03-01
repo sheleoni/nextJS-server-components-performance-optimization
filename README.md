@@ -44,7 +44,7 @@ export default function Home() {
 </details>
 
 
-(b) Render `<button onCLick={postData}>` on a client component and its children in a server component WITH the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
+(b) Render `<button onClick={postData}>` on a client component and its children in a server component WITH the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
 <details>
  <summary>
   Code
