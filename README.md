@@ -38,11 +38,15 @@ We are testing two scenarios:
 
 ### (ii) When there is no `<Images />` tag rendered within the `<button>` tags
 
-Alternatively, if we simply render a button without image. There is no perciptible difference on First Load JS.
+Alternatively, if we simply render a button without the `<Image />`s, the First Load JS becomes almost the same..
  
 | (c) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (d) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
 |------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 |<img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/08ce9d73-3248-4f40-a479-1f8321928bbd"> Size: 401 B, First Load JS: 84.6 kB| <img src="https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/aa1bee1a-3df2-4259-be6d-bda85aa2e6c3"> Size: 377 B, First Load JS: 84.6 kB|
+
+# Conclusion
+
+Unless the `<button>` contains a lot of markup, rendering the entire button in a client component doesn't produce much difference in performance.
 
 # Handling POST logic on the server
 
