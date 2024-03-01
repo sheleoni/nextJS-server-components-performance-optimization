@@ -5,13 +5,17 @@ Visualising whether refactoring a button containing client logic (i.e. `<button 
 
 # Approach
 
-Two branches are created for comparison: 
+Four branches are created for comparison: 
 
-(a) Client component renders the entire button: [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
+(a) Client component renders the entire button WITH the images: [/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)
 
-(b) Render `<button onCLick={postData}>` on a client component and its children in a server component: [feat/server_and_client_component](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/feat/server_and_client_component), [code difference from (a)](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1/files)
+(b) Render `<button onCLick={postData}>` on a client component and its children in a server component WITH the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
 
 Both branches render a button that contains two `<Images>` and some text. Upon click, it will POST data to a dummy API.
+
+(c) Client component renders the entire button WITHOUT the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2))
+
+(d) Render `<button onCLick={postData}>` on a client component and its children in a server component WITHOUT the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3))
 
 <p>Navigate to each branch and run</p>
 
@@ -36,6 +40,13 @@ We are testing two scenarios:
 
 Alternatively, if we simply render a button without image. There is no perciptible difference on First Load JS.
  
-| (a) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (b) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
-|-----------------------|---------------------------|
-|using only client component to render the button and its children ![CleanShot 2024-02-29 at 02 25 50@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/c9c0ef6a-8af8-4f43-93b6-9c8638f333f9) Size: 401 B, First Load JS: 84.6 kB | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-29 at 02 28 08@2x](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/942b6d2d-b645-4ba4-b8ee-a392f38866d2) Size: 377 kB, First Load JS: 84.6 kB |
+| (c) Only Client Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2)) | (d) Client & Server Component ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3)) |
+|------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+
+# Handling POST logic on the server
+
+Is there a way to handle the POST logic on a server component then? It seems like [server actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) may offer a way to POST data on server components.  However, if we are POSTing to a third-party API, this may not apply - we probably still have to POST data from the client component, in which case this repository may help 
+
+# Credits
+
+This stemmed from a discussion from with Josh and Bonnie on [Joy Of React's](https://www.joyofreact.com/) discord channel. Thank you for helping me understand this topic in depth ✨
