@@ -9,13 +9,175 @@
 
 (a) クライアント・コンポーネントは、画像とともにボタン全体をレンダリングする（[/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)）
 
+<details>
+  <summary>コード
+</summary>
+  
+```jsx
+// /page.js
+'use client'
+import styles from "./page.module.css";
+import UnicornImage from "./Uni-code_Unicorn_.png";
+import UnicornInTheSunImage from "./Unicorn_In_The_Sun.png";
+import Image from "next/image";
+const postSomeData = async () => {
+    const res = await fetch('/api/sendData/', {method: 'POST'});
+    window.alert("Data posted!")
+}
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <button onClick={postSomeData}>
+            <Image src={UnicornImage} alt={"Image of a unicorn typing on a laptop."} width={150} height={150} />
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300} />
+            </p>
+            <p>
+                Submit (POST data)
+            </p>
+        </button>
+    </main>
+  );
+}
+
+```
+</details>
+
 (b) `<button onCLick={postData}>`をクライアント・コンポーネントでレンダリングし、その子コンポーネントをサーバー・コンポーネントで画像とともにレンダリングする ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
 
-どちらのブランチも、2つの`<Image />`といくつかのテキストを含むボタンをレンダリングします。クリックすると、ダミーのAPIにデータをPOSTする。
+<details>
+ <summary>
+  コード
+ </summary>
+ 
+ ```jsx
+ // page.js (server component)
+ import styles from "./page.module.css";
+import UnicornImage from "./Uni-code_Unicorn_.png";
+import UnicornInTheSunImage from "./Unicorn_In_The_Sun.png";
+import Image from "next/image";
+import {ButtonContainer} from "@/app/components/ButtonContainer";
+
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <ButtonContainer>
+            <Image src={UnicornImage} alt={"Image of a unicorn typing on a laptop."} width={150} height={150}/>
+            <p>
+                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300}/>
+            </p>
+            <p>
+                Submit (POST data)
+            </p>
+        </ButtonContainer>
+    </main>
+  );
+} 
+ ```
+
+```jsx
+// ButtonContainer.jsx (Client component)
+'use client'
+
+export function ButtonContainer ({ children }) {
+
+    const postSomeData = async () => {
+        const res = await fetch('/api/sendData/', {method: 'POST'});
+        window.alert("Data posted!")
+    }
+
+    return (
+        <button onClick={postSomeData}>
+            {children}
+        </button>
+    )
+
+}
+```
+</details>
 
 (c) クライアント・コンポーネントは画像なしでボタン全体をレンダリングする: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2))
 
+
+<details>
+ <summary>
+  コード
+ </summary>
+
+```jsx
+// /page.js (client component)
+'use client'
+import styles from "./page.module.css";
+const postSomeData = async () => {
+    const res = await fetch('/api/sendData/', {method: 'POST'});
+    window.alert("Data posted!")
+}
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <button onClick={postSomeData}>
+            <p>
+                Submit (POST data)
+            </p>
+        </button>
+    </main>
+  );
+}
+```
+ 
+</details>
+
+
 (d) `<button onCLick={postData}>`をクライアント・コンポーネントに、その子コンポーネントをサーバー・コンポーネントに、画像なしでレンダリングする: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/3))
+
+<details>
+ <summary>
+  コード
+ </summary>
+
+```jsx
+// page.js (server component)
+import styles from "./page.module.css";
+import {ButtonContainer} from "@/app/components/ButtonContainer";
+
+
+export default function Home() {
+  return (
+    <main className={styles.main}>
+        <ButtonContainer>
+            <p>
+                Submit (POST data)
+            </p>
+        </ButtonContainer>
+    </main>
+  );
+}
+```
+
+```jsx
+// ButtonContainer.jsx (client component)
+'use client'
+
+export function ButtonContainer ({ children }) {
+
+    const postSomeData = async () => {
+        const res = await fetch('/api/sendData/', {method: 'POST'});
+        window.alert("Data posted!")
+    }
+
+    return (
+        <button onClick={postSomeData}>
+            {children}
+        </button>
+    )
+
+}
+```
+</details>
+
 
 <p>各ブランチに移動し、
 
