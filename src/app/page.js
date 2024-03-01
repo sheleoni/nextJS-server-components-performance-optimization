@@ -14,9 +14,6 @@ export default function Home() {
                 <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300}/>
             </p>
             <p>
-                <Image src={UnicornInTheSunImage} alt={"Image of a unicorn at the beach."} width={300} height={300} />
-            </p>
-            <p>
                 Submit (POST data)
             </p>
         </ButtonContainer>
