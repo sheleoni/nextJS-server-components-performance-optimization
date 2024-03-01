@@ -11,7 +11,7 @@ Four branches are created for comparison:
 
 (b) Render `<button onCLick={postData}>` on a client component and its children in a server component WITH the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1))
 
-Both branches render a button that contains two `<Images>` and some text. Upon click, it will POST data to a dummy API.
+Both branches render a button that contains two `<Image />`s and some text. Upon click, it will POST data to a dummy API.
 
 (c) Client component renders the entire button WITHOUT the images: ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/2))
 
@@ -36,7 +36,7 @@ We are testing two scenarios:
 |-----------------------|---------------------------|
 |using only client component to render the button and its children ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) Size: 6.3 kB, First Load JS: 90.5 kB | using client component to render the button tag, and server component to render its children ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114) Size: 6.09 kB, First Load JS: 90.3 kB |
 
-### (ii) When there is no `<Images />` tag rendered within the `<button>` tags
+### (ii) When there are no `<Image />` tags rendered within the `<button>` tags
 
 Alternatively, if we simply render a button without the `<Image />`s, the First Load JS becomes almost the same..
  
