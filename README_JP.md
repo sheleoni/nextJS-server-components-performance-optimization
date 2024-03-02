@@ -3,7 +3,7 @@
 
 POST送信できるボタン(例: `<button onClick={submitData}>Submit</button>`) をサーバ・コンポネントとクライアント・コンポネント(`'use client'`ディレクティブで示される)にリファクタリングすることで、パフォーマンスが大幅に向上するかどうかを可視化する。
 
-# 取り組み
+# アプローチ
 
 パフォーマンスを比較するため、以下のブランチを作成した：
 
@@ -198,7 +198,7 @@ npm run build
 ### (i) `<button>` タグ内に2つの `<Image />` がレンダリングされる場合
 | (a) クライアント・コンポーネントのみ（[/main](https://github.com/sheleoni/nextJS-server-components-performance-optimization/tree/main)）                                                                                                                            | (b) クライアントとサーバー・コンポーネントを併用 ([PR](https://github.com/sheleoni/nextJS-server-components-performance-optimization/pull/1)) |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| ボタンとその子のレンダリングにクライアント・コンポーネントだけを使う場合 ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) Size: 6.3 kB, First Load JS: 90.5 kB | クライアント・コンポーネントを使用してボタン・タグをレンダリングし、サーバー・コンポーネントを使用してその子をレンダリングする ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114) Size: 6.09 kB, First Load JS: 90.3 kB |
+| ボタンとそのchildrenのレンダリングにクライアント・コンポーネントだけを使う場合 ![CleanShot 2024-02-28 at 01 32 21](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/3b5ef108-4553-4b60-a7cb-54e1c4ece290) Size: 6.3 kB, First Load JS: 90.5 kB | クライアント・コンポーネントを使用してボタン・タグをレンダリングし、サーバー・コンポーネントを使用してそのchildrenをレンダリングする ![CleanShot 2024-02-28 at 01 32 44](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/5502274f-9e08-4415-bec0-1c7fc56be114) Size: 6.09 kB, First Load JS: 90.3 kB |
 
 ### (ii) `<button>` タグ内に `<Images />` タグがない場合
 
@@ -218,4 +218,4 @@ npm run build
 
 ## 参考
 
-本リポジトリは[Joy Of React](https://www.joyofreact.com/)のdiscordチャンネルで[Josh](https://twitter.com/JoshWComeau)さん（Joy Of Reactの作成者）と[Bonnie](https://bonnie.dev/)さんと議論したことに端を発しています。このトピックについてのより深い理解を助けていただいております。
+本リポジトリは[Joy Of React](https://www.joyofreact.com/)のdiscordチャンネルで[Josh](https://twitter.com/JoshWComeau)さん（Joy Of Reactの作成者）と[Bonnie](https://bonnie.dev/)さんと議論したことがきっかけです。このトピックについてのより深い理解を助けていただいております。
