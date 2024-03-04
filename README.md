@@ -205,6 +205,8 @@ Alternatively, if we simply render a button without the `<Image />`s, the First 
 # Conclusion
 
 Unless the `<button>` contains a lot of markup, rendering the entire button in a client component doesn't produce much difference in performance.
+
+Here's an illustration I did to summarize the findings:
 ![RSC Optimisation](https://github.com/sheleoni/nextJS-server-components-performance-optimization/assets/85994674/2d1e4b1e-9a9a-44d7-ba3e-cf1c6db7bc4e)
 
 ## Alternative: Handling POST logic on the server
